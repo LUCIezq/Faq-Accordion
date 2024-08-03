@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Proyectos",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "blog-preview-card-main"
+	}
+}

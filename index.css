@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'WorkSans-Bold';
+    src: url(./assets/fonts/static/WorkSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'WorkSans-Regular';
+    src: url(./assets/fonts/static/WorkSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'WorkSans-SemiBold';
+    src: url(./assets/fonts/static/WorkSans-SemiBold.ttf);
+}
+
+:root {
+    --primary-color: #381A40;
+    --secodary-color: #A42EF2;
+    --icon-question-url: url("./assets/images/icon-plus.svg");
+}
+
+body {
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem;
+}
+
+.faq {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    box-shadow: 0px 10px 20px #00000052;
+    width: 650px;
+    z-index: 1;
+}
+
+
+.faq__item {
+    display: flex;
+    border-bottom: 1px solid #00000005;
+    padding-bottom: .5rem;
+}
+
+.faq__header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.faq__icon-star {
+    height: 50px;
+    width: 50px;
+}
+
+.title {
+    color: var(--primary-color);
+    font-family: "WorkSans-Bold";
+    font-size: 3rem;
+
+}
+
+.faq__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+}
+
+.faq__question::after {
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-image: var(--icon-question-url);
+    transition: background-image .4s;
+    cursor: pointer;
+}
+
+.faq__item[open] {
+    --icon-question-url: url("./assets/images/icon-minus.svg");
+}
+
+.faq__title {
+    color: var(--primary-color);
+    font-family: 'WorkSans-Bold';
+    cursor: pointer;
+    font-size: clamp(.9rem, 2vw + 5px, 1.1rem);
+}
+
+.faq__title:hover {
+    color: var(--secodary-color);
+}
+
+.faq__answer p {
+    font-family: 'WorkSans-Regular';
+    font-size: clamp(.9rem, 2vw, 1rem);
+    color: #a384ab;
+    padding: 1rem 0;
+}
+
+.faq__item[open] {
+    .faq__title {
+        color: var(--secodary-color);
+    }
+}
